@@ -5,8 +5,9 @@ import "fmt"
 func main() {
 	data := []string{"one", "", "three"}
 	fmt.Printf("%q\n", nonempty(data)) // `["one", "three"]`
+	fmt.Printf("%q\n", data)					 // `["one", "three", "three"]`
 }
-
+// the underlying array is modified during the call
 func nonempty(strings []string) []string {
 	i := 0
 	for _, s := range strings {
